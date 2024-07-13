@@ -83,7 +83,7 @@ li {
 }
 
 .text--pink {
-    color:#694E4E;
+    color:#BB85DC;
 }
 
 section:nth-child(even) {
@@ -118,7 +118,7 @@ nav {
 }
 
 .nav__link--anchor-primary {
-    background-color: #694E4E;
+    background-color: #BB85DC;
     padding: 8px 20px;
     color: white;
     border-radius: 50px;
@@ -131,7 +131,7 @@ nav {
 
 .personal__logo {
     font-size: 24px;
-    color: #694E4E;
+    color: #BB85DC;
     margin: 0 12px;
     font-weight: bold;
 }
@@ -203,7 +203,7 @@ nav {
 
 .about-me__link {
     font-size: 20px;
-    color: #694E4E;
+    color: #BB85DC;
     padding: 0 16px;
 }
 
