@@ -1,2 +1,2 @@
 # E-Portfolio
- A portfolio of all my projects as a Software Developer
+ A portfolio of all my projects as a Software Engineer
