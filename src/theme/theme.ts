@@ -112,6 +112,12 @@ export const theme = createTheme({
           backgroundAttachment: 'fixed',
           backgroundRepeat: 'no-repeat',
         },
+
+        // MUI's focus wash vanishes against these backgrounds.
+        ':focus-visible': {
+          outline: `2px solid ${theme.vars.palette.primary.main}`,
+          outlineOffset: 2,
+        },
       }),
     },
 
