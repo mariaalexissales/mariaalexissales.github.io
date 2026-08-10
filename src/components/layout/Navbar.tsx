@@ -31,9 +31,17 @@ export default function Navbar() {
       position="sticky"
       elevation={0}
       sx={(theme) => ({
+        // Opaque by default. The translucent version only lands where
+        // backdrop-filter works, or the page would show straight through.
         backgroundColor: theme.vars.palette.background.default,
         borderBottom: `1px solid ${theme.vars.palette.divider}`,
         color: theme.vars.palette.text.primary,
+
+        '@supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))': {
+          backgroundColor: `rgba(${theme.vars.palette.background.defaultChannel} / 0.72)`,
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+        },
       })}
     >
       <Container maxWidth="lg">

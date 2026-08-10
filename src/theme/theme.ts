@@ -101,4 +101,39 @@ export const theme = createTheme({
     body1: { lineHeight: 1.7 },
     body2: { lineHeight: 1.65 },
   },
+
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: (theme) => ({
+        body: {
+          // Fixed, so the washes read as light in the room rather than as a
+          // texture printed on the page.
+          backgroundImage: `radial-gradient(60rem 40rem at 15% -10%, ${theme.vars.palette.ramp.glow1}, transparent 60%), radial-gradient(50rem 35rem at 95% 10%, ${theme.vars.palette.ramp.glow2}, transparent 55%)`,
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat',
+        },
+      }),
+    },
+
+    MuiCard: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundImage: 'none',
+          borderColor: theme.vars.palette.ramp.hairline,
+
+          '@media (prefers-reduced-motion: no-preference)': {
+            transition: theme.transitions.create(['border-color', 'box-shadow', 'transform'], {
+              duration: theme.transitions.duration.short,
+            }),
+            '&:hover': { transform: 'translateY(-3px)' },
+          },
+
+          '&:hover': {
+            borderColor: theme.vars.palette.ramp.hairlineStrong,
+            boxShadow: `0 14px 40px -18px ${theme.vars.palette.ramp.glow1}`,
+          },
+        }),
+      },
+    },
+  },
 })
