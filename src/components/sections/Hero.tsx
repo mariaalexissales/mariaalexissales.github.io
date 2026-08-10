@@ -5,6 +5,7 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import GlowButton from '../common/GlowButton'
 import GradientText from '../common/GradientText'
 import SocialIcon from '../common/SocialIcon'
 import { hero } from '../../data/hero'
@@ -51,19 +52,24 @@ export default function Hero() {
                 useFlexGap
                 sx={{ flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } }}
               >
-                {hero.socials.map((social) => (
-                  <Button
-                    key={social.kind}
-                    href={social.href}
-                    variant={social.kind === 'resume' ? 'contained' : 'outlined'}
-                    color={social.kind === 'resume' ? 'primary' : 'inherit'}
-                    startIcon={<SocialIcon kind={social.kind} />}
-                    target={social.kind === 'email' ? undefined : '_blank'}
-                    rel={social.kind === 'email' ? undefined : 'noopener noreferrer'}
-                  >
-                    {social.label}
-                  </Button>
-                ))}
+                {hero.socials.map((social) => {
+                  const isResume = social.kind === 'resume'
+                  const ButtonComponent = isResume ? GlowButton : Button
+
+                  return (
+                    <ButtonComponent
+                      key={social.kind}
+                      href={social.href}
+                      variant={isResume ? 'contained' : 'outlined'}
+                      color={isResume ? 'primary' : 'inherit'}
+                      startIcon={<SocialIcon kind={social.kind} />}
+                      target={social.kind === 'email' ? undefined : '_blank'}
+                      rel={social.kind === 'email' ? undefined : 'noopener noreferrer'}
+                    >
+                      {social.label}
+                    </ButtonComponent>
+                  )
+                })}
               </Stack>
             </Stack>
           </Grid>

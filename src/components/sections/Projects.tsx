@@ -8,6 +8,7 @@ import Chip from '@mui/material/Chip'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import GlowButton from '../common/GlowButton'
 import Section from '../common/Section'
 import { projects } from '../../data/projects'
 
@@ -55,7 +56,7 @@ export default function Projects() {
                   </Button>
                 )}
                 {project.liveUrl && (
-                  <Button
+                  <GlowButton
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -64,7 +65,7 @@ export default function Projects() {
                     startIcon={<LaunchIcon />}
                   >
                     {project.liveLabel ?? 'Live demo'}
-                  </Button>
+                  </GlowButton>
                 )}
               </CardActions>
             </Card>
