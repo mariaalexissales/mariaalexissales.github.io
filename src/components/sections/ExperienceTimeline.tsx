@@ -3,9 +3,11 @@ import VolunteerActivismOutlined from "@mui/icons-material/VolunteerActivismOutl
 import WorkOutlined from "@mui/icons-material/WorkOutlined";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineContent, {
+  timelineContentClasses,
+} from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
 import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from "@mui/lab/TimelineOppositeContent";
@@ -14,6 +16,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 import Section from "../common/Section";
 import { experience } from "../../data/experience";
 import type { ExperienceEntry } from "../../data/types";
@@ -36,7 +40,6 @@ function dotFor(entry: ExperienceEntry) {
         color: "info",
       } as const;
     default: {
-      // A new `kind` without a dot fails the build here.
       const unhandled: never = entry;
       return unhandled;
     }
@@ -44,25 +47,26 @@ function dotFor(entry: ExperienceEntry) {
 }
 
 export default function ExperienceTimeline() {
+  const theme = useTheme();
+  const alternate = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <Section id="experience" eyebrow="Where I have worked" title="Experience">
       <Timeline
-        position="right"
+        position={alternate ? "alternate" : "right"}
         sx={{
           p: 0,
           m: 0,
-          /**
-           * A fixed date gutter instead of MUI's alternating layout, which
-           * gives every other card a different edge to start from. One column
-           * of dates, one rail, one column of cards.
-           */
+          [`& .${timelineContentClasses.root}`]: { pl: 2, pr: 0, pb: 4 },
+          [`& .${timelineItemClasses.root}:nth-of-type(even) .${timelineContentClasses.root}`]:
+            {
+              textAlign: "left",
+              pl: { md: 0 },
+              pr: { md: 2 },
+            },
           [`& .${timelineOppositeContentClasses.root}`]: {
             display: { xs: "none", md: "block" },
-            // Wide enough for "Sept 2025 – Present" on one line at caption size.
-            flex: { md: "0 0 184px" },
-            px: { md: 2 },
             pt: { md: 2.5 },
-            textAlign: "right",
             whiteSpace: "nowrap",
           },
         }}
@@ -87,7 +91,7 @@ export default function ExperienceTimeline() {
                 {index < experience.length - 1 && <TimelineConnector />}
               </TimelineSeparator>
 
-              <TimelineContent sx={{ pl: 2, pr: 0, pb: 4 }}>
+              <TimelineContent>
                 <Card variant="outlined">
                   <CardContent>
                     <Stack spacing={1}>
