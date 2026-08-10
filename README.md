@@ -1,7 +1,7 @@
 # mariaalexissales.github.io
 
-[![CI](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/ci.yml/badge.svg?branch=vite-react-migration)](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/ci.yml)
-[![Deploy](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/deploy.yml/badge.svg?branch=vite-react-migration)](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/deploy.yml)
+[![CI](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/ci.yml)
+[![Deploy](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/mariaalexissales/mariaalexissales.github.io/actions/workflows/deploy.yml)
 
 My developer portfolio. Single page, built with Vite, React and MUI, deployed to GitHub Pages.
 
@@ -89,5 +89,9 @@ build. Needs Node 20.19+. CI runs 22.
 
 ## Deployment
 
-Pushes to `vite-react-migration` run `.github/workflows/deploy.yml`, which builds and publishes
-`dist/` as a Pages artifact. Settings → Pages → Source has to be set to **GitHub Actions**.
+Pushes to `main` run `.github/workflows/deploy.yml`, which builds and publishes `dist/` as a Pages
+artifact.
+
+Settings → Pages → Source has to be set to **GitHub Actions**. On "Deploy from a branch" GitHub
+serves the repo root verbatim, so the browser gets the source `index.html`, asks for
+`/src/main.tsx`, refuses to run it as a module, and the page renders empty.
