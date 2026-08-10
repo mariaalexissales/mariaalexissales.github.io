@@ -1,6 +1,6 @@
 import type { Project } from './types'
 
-export const projects = [
+export const projects: Project[] = [
   {
     name: 'go-ledger',
     tagline: 'Double-entry ledger API with a live security console',
@@ -29,4 +29,4 @@ export const projects = [
     liveUrl: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3746632343',
     liveLabel: 'View on Steam',
   },
-] satisfies Project[]
+]

@@ -2,7 +2,7 @@ import type { Certification } from './types'
 import advancedAlgorithms from '../assets/certificate-advanced-algorithms.jpeg'
 import supervisedMl from '../assets/certificate-supervised-ml.jpeg'
 
-export const certifications = [
+export const certifications: Certification[] = [
   {
     name: 'Supervised Machine Learning: Regression and Classification',
     issuer: 'Stanford University & DeepLearning.AI',
@@ -21,4 +21,4 @@ export const certifications = [
     credentialUrl: 'https://coursera.org/share/eaded5adfe8fcd09629e537efdd739e8',
     image: advancedAlgorithms,
   },
-] satisfies Certification[]
+]

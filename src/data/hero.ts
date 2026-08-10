@@ -1,6 +1,6 @@
 import type { Hero } from './types'
 
-export const hero = {
+export const hero: Hero = {
   name: 'Maria Alexis Sales',
   role: 'Backend Software Engineer',
   location: 'Chicago, IL',
@@ -29,4 +29,4 @@ export const hero = {
       href: '/resume/maria-sales-resume.pdf',
     },
   ],
-} satisfies Hero
+}

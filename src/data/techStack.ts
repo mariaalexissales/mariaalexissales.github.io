@@ -1,10 +1,11 @@
 import type { TechCategory, TechItem } from './types'
 
 /**
- * Keyed by category so the section can iterate `keyof typeof techStack` and
- * stay in step when a category is added.
+ * Annotated, not `satisfies`. `satisfies` keeps the literal type, which drops
+ * `detail` from the entries that omit it. The Record still catches a missing
+ * category.
  */
-export const techStack = {
+export const techStack: Record<TechCategory, TechItem[]> = {
   Languages: [
     { name: 'Go' },
     { name: 'C#', detail: '.NET' },
@@ -36,4 +37,4 @@ export const techStack = {
     { name: 'React' },
     { name: 'Next.js' },
   ],
-} satisfies Record<TechCategory, TechItem[]>
+}

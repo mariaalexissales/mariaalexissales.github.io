@@ -1,7 +1,7 @@
 import type { ExperienceEntry } from './types'
 
 /** Reverse chronological by start date. Paid work sorts above volunteer on a tie. */
-export const experience = [
+export const experience: ExperienceEntry[] = [
   {
     kind: 'work',
     role: 'Software Engineer',
@@ -77,4 +77,4 @@ export const experience = [
       'Coursework in program design, data structures and discrete mathematics in C++, and machine organization.',
     ],
   },
-] satisfies ExperienceEntry[]
+]
