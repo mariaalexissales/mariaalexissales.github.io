@@ -5,6 +5,7 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import GradientText from '../common/GradientText'
 import SocialIcon from '../common/SocialIcon'
 import { hero } from '../../data/hero'
 import me from '../../assets/me.jpg'
@@ -31,9 +32,9 @@ export default function Hero() {
                 <Typography variant="overline" color="secondary">
                   {hero.role} · {hero.location}
                 </Typography>
-                <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '3.75rem' } }}>
+                <GradientText variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '3.75rem' } }}>
                   {hero.name}
-                </Typography>
+                </GradientText>
               </Stack>
 
               <Typography
