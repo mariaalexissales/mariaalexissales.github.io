@@ -8,8 +8,8 @@ export type TechCategory =
 
 export interface TechItem {
   name: string
-  /** Devicon slug. Items without one fall back to a plain label. */
-  icon?: string
+  /** Shown under the name. Keeps "AWS" from having to mean six things. */
+  detail?: string
 }
 
 export interface Project {
