@@ -1,4 +1,3 @@
-import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
@@ -10,7 +9,6 @@ import GradientText from '../common/GradientText'
 import SocialIcon from '../common/SocialIcon'
 import { hero } from '../../data/hero'
 import me from '../../assets/me.jpg'
-import programmer from '../../assets/programmer.svg'
 
 export default function Hero() {
   return (
@@ -19,16 +17,6 @@ export default function Hero() {
         <Grid container spacing={{ xs: 5, md: 8 }} sx={{ alignItems: 'center' }}>
           <Grid size={{ xs: 12, md: 7 }}>
             <Stack spacing={3} sx={{ alignItems: { xs: 'center', md: 'flex-start' } }}>
-              <Avatar
-                src={me}
-                alt={hero.name}
-                sx={(theme) => ({
-                  width: 96,
-                  height: 96,
-                  border: `2px solid ${theme.vars.palette.primary.main}`,
-                })}
-              />
-
               <Stack spacing={1} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
                 <Typography variant="overline" color="secondary">
                   {hero.role} · {hero.location}
@@ -74,12 +62,22 @@ export default function Hero() {
             </Stack>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 5 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Box
               component="img"
-              src={programmer}
-              alt=""
-              sx={{ width: '100%', height: 'auto', display: 'block' }}
+              src={me}
+              alt={hero.name}
+              sx={(theme) => ({
+                display: 'block',
+                width: '100%',
+                maxWidth: { xs: 280, md: 'none' },
+                mx: 'auto',
+                aspectRatio: '4 / 5',
+                objectFit: 'cover',
+                borderRadius: 3,
+                border: `1px solid ${theme.vars.palette.ramp.hairlineStrong}`,
+                boxShadow: `0 24px 60px -24px ${theme.vars.palette.ramp.glow2}`,
+              })}
             />
           </Grid>
         </Grid>
