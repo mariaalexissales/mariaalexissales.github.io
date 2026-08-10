@@ -18,6 +18,15 @@ export default function Section({ id, eyebrow, title, children }: SectionProps) 
       <Container maxWidth="lg">
         <Stack spacing={{ xs: 4, md: 6 }}>
           <Stack spacing={1}>
+            <Box
+              aria-hidden
+              sx={(theme) => ({
+                width: 72,
+                height: 3,
+                borderRadius: 2,
+                backgroundImage: theme.vars.palette.gradient.holo,
+              })}
+            />
             <Typography variant="overline" color="secondary">
               {eyebrow}
             </Typography>
