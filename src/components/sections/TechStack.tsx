@@ -1,13 +1,13 @@
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import Section from '../common/Section'
-import { techStack } from '../../data/techStack'
-import type { TechCategory } from '../../data/types'
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import Section from "../common/Section";
+import { techStack } from "../../data/techStack";
+import type { TechCategory } from "../../data/types";
 
-const categories = Object.keys(techStack) as TechCategory[]
+const categories = Object.keys(techStack) as TechCategory[];
 
 export default function TechStack() {
   return (
@@ -15,7 +15,7 @@ export default function TechStack() {
       <Grid container spacing={3}>
         {categories.map((category) => (
           <Grid key={category} size={{ xs: 12, sm: 6 }}>
-            <Card variant="outlined" sx={{ height: '100%' }}>
+            <Card variant="outlined" sx={{ height: "100%" }}>
               <CardContent>
                 <Typography variant="h6" sx={{ mb: 2 }}>
                   {category}
@@ -40,5 +40,5 @@ export default function TechStack() {
         ))}
       </Grid>
     </Section>
-  )
+  );
 }

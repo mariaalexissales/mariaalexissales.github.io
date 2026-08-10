@@ -1,26 +1,26 @@
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LaunchIcon from '@mui/icons-material/Launch'
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import Chip from '@mui/material/Chip'
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import GlowButton from '../common/GlowButton'
-import Section from '../common/Section'
-import { projects } from '../../data/projects'
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LaunchIcon from "@mui/icons-material/Launch";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Chip from "@mui/material/Chip";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import GlowButton from "../common/GlowButton";
+import Section from "../common/Section";
+import { projects } from "../../data/projects";
 
 export default function Projects() {
   return (
     <Section id="projects" eyebrow="Things I built" title="Projects">
-      <Grid container spacing={3} sx={{ alignItems: 'stretch' }}>
+      <Grid container spacing={3} sx={{ alignItems: "stretch" }}>
         {projects.map((project) => (
           <Grid key={project.name} size={{ xs: 12, md: 4 }}>
             <Card
               variant="outlined"
-              sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+              sx={{ height: "100%", display: "flex", flexDirection: "column" }}
             >
               <CardContent sx={{ flexGrow: 1 }}>
                 <Stack spacing={1.5}>
@@ -35,9 +35,19 @@ export default function Projects() {
                     {project.description}
                   </Typography>
 
-                  <Stack direction="row" spacing={0.75} useFlexGap sx={{ flexWrap: 'wrap' }}>
+                  <Stack
+                    direction="row"
+                    spacing={0.75}
+                    useFlexGap
+                    sx={{ flexWrap: "wrap" }}
+                  >
                     {project.tags.map((tag) => (
-                      <Chip key={tag} label={tag} size="small" variant="outlined" />
+                      <Chip
+                        key={tag}
+                        label={tag}
+                        size="small"
+                        variant="outlined"
+                      />
                     ))}
                   </Stack>
                 </Stack>
@@ -64,7 +74,7 @@ export default function Projects() {
                     variant="contained"
                     startIcon={<LaunchIcon />}
                   >
-                    {project.liveLabel ?? 'Live demo'}
+                    {project.liveLabel ?? "Live demo"}
                   </GlowButton>
                 )}
               </CardActions>
@@ -73,5 +83,5 @@ export default function Projects() {
         ))}
       </Grid>
     </Section>
-  )
+  );
 }

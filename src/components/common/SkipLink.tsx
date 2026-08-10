@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box'
+import Box from "@mui/material/Box";
 
 /** Off-screen until focused, so the first Tab offers a way past the nav. */
 export default function SkipLink() {
@@ -7,7 +7,7 @@ export default function SkipLink() {
       component="a"
       href="#main"
       sx={(theme) => ({
-        position: 'absolute',
+        position: "absolute",
         left: 8,
         top: -64,
         zIndex: theme.zIndex.tooltip,
@@ -17,12 +17,12 @@ export default function SkipLink() {
         backgroundColor: theme.vars.palette.background.paper,
         color: theme.vars.palette.text.primary,
         border: `1px solid ${theme.vars.palette.primary.main}`,
-        textDecoration: 'none',
+        textDecoration: "none",
 
-        '&:focus-visible': { top: 8 },
+        "&:focus-visible": { top: 8 },
       })}
     >
       Skip to content
     </Box>
-  )
+  );
 }

@@ -1,18 +1,23 @@
-import type { ReactNode } from 'react'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
+import type { ReactNode } from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 
 interface SectionProps {
   /** Also the anchor target for the navbar link. */
-  id: string
-  eyebrow: string
-  title: ReactNode
-  children: ReactNode
+  id: string;
+  eyebrow: string;
+  title: ReactNode;
+  children: ReactNode;
 }
 
-export default function Section({ id, eyebrow, title, children }: SectionProps) {
+export default function Section({
+  id,
+  eyebrow,
+  title,
+  children,
+}: SectionProps) {
   return (
     <Box component="section" id={id} sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
@@ -30,7 +35,10 @@ export default function Section({ id, eyebrow, title, children }: SectionProps) 
             <Typography variant="overline" color="secondary">
               {eyebrow}
             </Typography>
-            <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.75rem' } }}>
+            <Typography
+              variant="h2"
+              sx={{ fontSize: { xs: "2rem", md: "2.75rem" } }}
+            >
               {title}
             </Typography>
           </Stack>
@@ -38,5 +46,5 @@ export default function Section({ id, eyebrow, title, children }: SectionProps) 
         </Stack>
       </Container>
     </Box>
-  )
+  );
 }
