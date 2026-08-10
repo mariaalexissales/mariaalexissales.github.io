@@ -72,8 +72,11 @@ export default function Hero() {
                 width: '100%',
                 maxWidth: { xs: 280, md: 'none' },
                 mx: 'auto',
-                aspectRatio: '4 / 5',
+                aspectRatio: '2 / 3',
                 objectFit: 'cover',
+                // Tall full-length source. A centred crop cuts across the
+                // subject; 38% keeps the whole head.
+                objectPosition: '50% 38%',
                 borderRadius: 3,
                 border: `1px solid ${theme.vars.palette.ramp.hairlineStrong}`,
                 boxShadow: `0 24px 60px -24px ${theme.vars.palette.ramp.glow2}`,
