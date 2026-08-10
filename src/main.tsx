@@ -17,10 +17,17 @@ import './index.css'
 // match on the provider and the pre-paint script.
 const MODE_STORAGE_KEY = 'theme'
 
+// Dark, not `system`. The palette is built dark-first. A stored choice wins.
+const DEFAULT_MODE = 'dark'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <InitColorSchemeScript defaultMode="system" modeStorageKey={MODE_STORAGE_KEY} attribute="class" />
-    <ThemeProvider theme={theme} defaultMode="system" modeStorageKey={MODE_STORAGE_KEY}>
+    <InitColorSchemeScript
+      defaultMode={DEFAULT_MODE}
+      modeStorageKey={MODE_STORAGE_KEY}
+      attribute="class"
+    />
+    <ThemeProvider theme={theme} defaultMode={DEFAULT_MODE} modeStorageKey={MODE_STORAGE_KEY}>
       <CssBaseline />
       <App />
     </ThemeProvider>
