@@ -17,10 +17,10 @@ My developer portfolio. Single page, built with Vite, React and MUI, deployed to
 - **Conditional project links.** `Project.liveUrl` is optional and its button label is
   overridable, so a Pages demo, a Steam Workshop listing and a repo-only project all render from
   the same card.
-- **Experience timeline.** `@mui/lab` `Timeline` with a fixed date gutter on desktop that folds
-  into the card on mobile, so every entry starts on the same edge. Entries are a discriminated
-  union on `kind`, and the dot comes from an exhaustive `switch`, so a new kind without a dot
-  fails the build.
+- **Experience timeline.** MUI's `Timeline`, customized so the line runs unbroken with entries
+  alternating either side, and stacks to the left on mobile. Entries are a discriminated union on
+  `kind`, and the dot comes from an exhaustive `switch`, so a new kind without a dot fails the
+  build.
 - **Accessible by default.** Skip link, a focus ring tuned for both schemes, labelled icon
   buttons, and every text/background pair at 4.5:1 or better.
 - **Motion is opt-in.** Card lift, button glow and smooth scrolling all sit behind

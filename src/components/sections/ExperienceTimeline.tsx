@@ -2,11 +2,13 @@ import SchoolOutlined from "@mui/icons-material/SchoolOutlined";
 import VolunteerActivismOutlined from "@mui/icons-material/VolunteerActivismOutlined";
 import WorkOutlined from "@mui/icons-material/WorkOutlined";
 import Timeline from "@mui/lab/Timeline";
-import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineConnector, {
+  timelineConnectorClasses,
+} from "@mui/lab/TimelineConnector";
 import TimelineContent, {
   timelineContentClasses,
 } from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineDot, { timelineDotClasses } from "@mui/lab/TimelineDot";
 import TimelineItem, { timelineItemClasses } from "@mui/lab/TimelineItem";
 import TimelineOppositeContent, {
   timelineOppositeContentClasses,
@@ -16,8 +18,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 import Section from "../common/Section";
 import { experience } from "../../data/experience";
 import type { ExperienceEntry } from "../../data/types";
@@ -47,28 +47,48 @@ function dotFor(entry: ExperienceEntry) {
 }
 
 export default function ExperienceTimeline() {
-  const theme = useTheme();
-  const alternate = useMediaQuery(theme.breakpoints.up("md"));
+  const last = experience.length - 1;
 
   return (
     <Section id="experience" eyebrow="Where I have worked" title="Experience">
       <Timeline
-        position={alternate ? "alternate" : "right"}
+        position="alternate"
+        role="list"
         sx={{
           p: 0,
-          m: 0,
-          [`& .${timelineContentClasses.root}`]: { pl: 2, pr: 0, pb: 4 },
+
+          [`& .${timelineDotClasses.root}`]: { m: 0 },
+
+          [`& .${timelineConnectorClasses.root}`]: {
+            bgcolor: "ramp.hairlineStrong",
+          },
+
+          [`& .${timelineContentClasses.root}`]: {
+            minWidth: 0,
+            overflowWrap: "anywhere",
+            pl: 2.5,
+            pr: 0,
+            py: 2,
+          },
+          [`& .${timelineOppositeContentClasses.root}`]: {
+            minWidth: 0,
+            display: { xs: "none", md: "block" },
+            pr: 2.5,
+            pl: 0,
+          },
+
+          [`& .${timelineItemClasses.root}:nth-of-type(even)`]: {
+            flexDirection: { xs: "row", md: "row-reverse" },
+          },
           [`& .${timelineItemClasses.root}:nth-of-type(even) .${timelineContentClasses.root}`]:
             {
               textAlign: "left",
-              pl: { md: 0 },
-              pr: { md: 2 },
+              pl: { xs: 2.5, md: 0 },
+              pr: { xs: 0, md: 2.5 },
             },
-          [`& .${timelineOppositeContentClasses.root}`]: {
-            display: { xs: "none", md: "block" },
-            pt: { md: 2.5 },
-            whiteSpace: "nowrap",
-          },
+
+          [`& .${timelineItemClasses.root}:nth-of-type(even) .${timelineOppositeContentClasses.root}`]:
+            { pl: { md: 2.5 }, pr: { md: 0 } },
         }}
       >
         {experience.map((entry, index) => {
@@ -76,19 +96,38 @@ export default function ExperienceTimeline() {
 
           return (
             <TimelineItem key={`${entry.organization}-${entry.period}`}>
-              <TimelineOppositeContent color="text.secondary">
-                <Typography variant="caption">{entry.period}</Typography>
+              <TimelineOppositeContent sx={{ m: "auto 0" }}>
+                <Typography variant="caption" color="text.secondary">
+                  {entry.period}
+                </Typography>
               </TimelineOppositeContent>
 
               <TimelineSeparator>
-                <TimelineDot
-                  variant="outlined"
-                  color={dot.color}
-                  sx={{ my: 1 }}
-                >
+                <TimelineConnector
+                  sx={
+                    index === 0
+                      ? (theme) => ({
+                          bgcolor: "transparent",
+                          backgroundImage: `linear-gradient(to bottom, transparent, ${theme.vars.palette.ramp.hairlineStrong})`,
+                        })
+                      : undefined
+                  }
+                />
+
+                <TimelineDot variant="outlined" color={dot.color}>
                   {dot.icon}
                 </TimelineDot>
-                {index < experience.length - 1 && <TimelineConnector />}
+
+                <TimelineConnector
+                  sx={
+                    index === last
+                      ? (theme) => ({
+                          bgcolor: "transparent",
+                          backgroundImage: `linear-gradient(to bottom, ${theme.vars.palette.ramp.hairlineStrong}, transparent)`,
+                        })
+                      : undefined
+                  }
+                />
               </TimelineSeparator>
 
               <TimelineContent>
