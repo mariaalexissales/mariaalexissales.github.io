@@ -7,8 +7,8 @@ export const projects: Project[] = [
     description:
       "A ledger API in Go behind an IP rate limiter and a security logger. Every request gets logged ALLOWED or BLOCKED, and the React console streams that log live while demo scenarios attack the limiter. One of them spoofs X-Forwarded-For. Toggle the fix off and watch it get through.",
     tags: ["Go", "PostgreSQL", "React", "Docker", "SSE"],
-    repoUrl: "https://github.com/mariaalexissales/go-ledger",
-    liveUrl: "https://mariaalexissales.github.io/go-ledger/",
+    repoUrl: "https://github.com/mariaalexissales/Go-Ledger",
+    liveUrl: "https://mariaalexissales.github.io/Go-Ledger/",
     liveLabel: "Try the console",
   },
   {
