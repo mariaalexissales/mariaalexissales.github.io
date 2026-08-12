@@ -19,6 +19,7 @@ export const projects: Project[] = [
     tags: ["React 19", "TypeScript", "MUI", "Dexie", "PWA"],
     repoUrl: "https://github.com/mariaalexissales/cooking-companion",
     liveUrl: "https://mariaalexissales.github.io/cooking-companion/",
+    liveLabel: "Try the web app",
   },
   {
     name: "Bundle Up!",
