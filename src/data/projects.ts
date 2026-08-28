@@ -32,4 +32,14 @@ export const projects: Project[] = [
       "https://steamcommunity.com/sharedfiles/filedetails/?id=3746632343",
     liveLabel: "View on Steam",
   },
+  {
+    name: "Bundle Up!",
+    tagline: "Inventory packing mod for Project Zomboid",
+    description: "A mod that brings Pinoy pantry staples into Knox County.",
+    tags: ["Lua", "Project Zomboid", "Steam Workshop"],
+    repoUrl: "https://github.com/mariaalexissales/Pinoy-Pantry",
+    liveUrl:
+      "https://steamcommunity.com/sharedfiles/filedetails/?id=3791631305",
+    liveLabel: "View on Steam",
+  },
 ];
