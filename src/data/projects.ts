@@ -33,8 +33,8 @@ export const projects: Project[] = [
     liveLabel: "View on Steam",
   },
   {
-    name: "Bundle Up!",
-    tagline: "Inventory packing mod for Project Zomboid",
+    name: "Pinoy Pantry",
+    tagline: "Pinoy Pantry mod for Project Zomboid",
     description: "A mod that brings Pinoy pantry staples into Knox County.",
     tags: ["Lua", "Project Zomboid", "Steam Workshop"],
     repoUrl: "https://github.com/mariaalexissales/Pinoy-Pantry",
