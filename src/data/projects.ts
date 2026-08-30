@@ -25,7 +25,7 @@ export const projects: Project[] = [
     name: "Bundle Up!",
     tagline: "Inventory packing mod for Project Zomboid",
     description:
-      "Packs loose inventory into single carryable containers: planks, sheet metal, nails, food, ammo, seeds. Bundle weights are sandbox options, so hosts can tune them and keep item overflow from tanking performance on long-running servers.",
+      "Packs loose inventory into single carryable containers: planks, sheet metal, nails, food, ammo, seeds. Bundle weights are sandbox options, so hosts can tune them and keep item overflow from tanking performance on long-running servers. Now comes with a UI for packing large amounts of stuff!",
     tags: ["Lua", "Project Zomboid", "Steam Workshop"],
     repoUrl: "https://github.com/mariaalexissales/bundle-up",
     liveUrl:
@@ -35,7 +35,8 @@ export const projects: Project[] = [
   {
     name: "Pinoy Pantry",
     tagline: "Pinoy Pantry mod for Project Zomboid",
-    description: "A mod that brings Pinoy pantry staples into Knox County.",
+    description:
+      "A mod that brings Pinoy pantry staples into Knox County. Remember the taste of your childhood or your barangay back home! Has a couple of staples in it, but not all. More will be coming soon, such as halo-halo, turon, ube (both the plant and the extract), and spam!",
     tags: ["Lua", "Project Zomboid", "Steam Workshop"],
     repoUrl: "https://github.com/mariaalexissales/Pinoy-Pantry",
     liveUrl:

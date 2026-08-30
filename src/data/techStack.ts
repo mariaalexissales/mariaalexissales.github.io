@@ -1,10 +1,5 @@
 import type { TechCategory, TechItem } from "./types";
 
-/**
- * Annotated, not `satisfies`. `satisfies` keeps the literal type, which drops
- * `detail` from the entries that omit it. The Record still catches a missing
- * category.
- */
 export const techStack: Record<TechCategory, TechItem[]> = {
   Languages: [
     { name: "Go" },
@@ -20,6 +15,8 @@ export const techStack: Record<TechCategory, TechItem[]> = {
     { name: "REST", detail: "OpenAPI, contract-first versioning" },
     { name: "NestJS" },
     { name: "Node.js" },
+    { name: "Springboot" },
+    { name: "Redis" },
   ],
   "Cloud & Infrastructure": [
     { name: "AWS", detail: "Lambda, API Gateway, EC2, S3" },
