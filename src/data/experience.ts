@@ -1,13 +1,12 @@
 import type { ExperienceEntry } from "./types";
 
-/** Reverse chronological by start date. Paid work sorts above volunteer on a tie. */
 export const experience: ExperienceEntry[] = [
   {
     kind: "work",
     role: "Software Engineer",
     organization: "USG Corporation",
     location: "Hybrid",
-    period: "Sept 2025 – Present",
+    period: "Sept 2025 – April 2026",
     points: [
       "Built and optimized the NestJS backend powering the redesigned USG enterprise website, launched Dec 2025, as part of a broader platform migration to Next.js 15.",
       "Root-caused a REST bottleneck where Kafka messages were hitting the 2GB payload limit, tracing it through structured logging to an upstream parser injecting uncleaned fields.",
