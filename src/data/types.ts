@@ -8,7 +8,6 @@ export type TechCategory =
 
 export interface TechItem {
   name: string;
-  /** Shown under the name. Keeps "AWS" from having to mean six things. */
   detail?: string;
 }
 
@@ -18,9 +17,7 @@ export interface Project {
   description: string;
   tags: string[];
   repoUrl?: string;
-  /** Not `githubPagesUrl`. One of these is a Steam listing. */
   liveUrl?: string;
-  /** Overrides the default "Live demo" button label. */
   liveLabel?: string;
 }
 

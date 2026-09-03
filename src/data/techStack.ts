@@ -20,6 +20,7 @@ export const techStack: Record<TechCategory, TechItem[]> = {
   ],
   "Cloud & Infrastructure": [
     { name: "AWS", detail: "Lambda, API Gateway, EC2, S3" },
+    { name: "GCP" },
     { name: "Azure" },
     { name: "Docker" },
     { name: "Kubernetes" },

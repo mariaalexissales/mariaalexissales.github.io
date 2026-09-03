@@ -5,7 +5,7 @@ export const hero: Hero = {
   role: "Backend Software Engineer",
   location: "Chicago, IL",
   summary:
-    "Backend engineer, 4+ years across fintech, enterprise platforms and AI infrastructure. I build event-driven services on Kafka and PostgreSQL, root-cause the REST APIs that misbehave, and ship them on Docker and Kubernetes across AWS and Azure.",
+    "Backend-focused software engineer with 4+ years across fintech, enterprise platforms and the games industry. I build event-driven services on Kafka and PostgreSQL, root-cause the REST APIs that misbehave, and ship them on Docker and Kubernetes across AWS and Azure. Currently learning Spring Boot and GCP",
   socials: [
     {
       kind: "github",
