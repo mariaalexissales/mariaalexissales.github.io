@@ -2,6 +2,14 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
+    name: "Quietroom",
+    tagline: "Domestic abuse resources disguised as a Pomodoro Timer",
+    description:
+      "In a world where technology is getting smarter, and AI shortening the time it takes to learn or break something, we tend to forget about the bad actors who use these tools to hurt people they're supposed to love. The threat model, HARMS, is based on a case study conducted by researchers at the University of Cambridge. HARMS tackles Harrassment, Access/Infiltration, Restrictions, Manipulation/Tampering, and Surveillence.",
+    tags: ["Next.js", "NestJS", "Go", "Spring Boot"],
+    repoUrl: "https://github.com/mariaalexissales/Quietroom",
+  },
+  {
     name: "go-ledger",
     tagline: "Double-entry ledger API with a live security console",
     description:
@@ -18,8 +26,6 @@ export const projects: Project[] = [
       "A Twitch bot made in Go. Features pulling single cards or a past-present-future spread. In the future, this will include a setup landing page for other Twitch streamers to use.",
     tags: ["Go", "Twitch"],
     repoUrl: "https://github.com/mariaalexissales/Twitch-Tarot-Bot",
-    liveUrl: "https://github.com/mariaalexissales/Twitch-Tarot-Bot",
-    liveLabel: "Landing Page Coming Soon!",
   },
   {
     name: "Cooking Companion",
@@ -51,6 +57,17 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/mariaalexissales/Pinoy-Pantry",
     liveUrl:
       "https://steamcommunity.com/sharedfiles/filedetails/?id=3791631305",
+    liveLabel: "View on Steam",
+  },
+  {
+    name: "Quest System Framework",
+    tagline: "Quest System for Multiplayer Servers on Project Zomboid",
+    description:
+      "This mod provides the immersion that we so desperately need in Knox County as we wait for B43's NPCs. Give your players things to do, places to see, and items to grab. The system should be easy to understand, and does not require a whole server restart to implement it.",
+    tags: ["Lua", "Project Zomboid", "Steam Workshop"],
+    repoUrl: "https://github.com/mariaalexissales/Quest-System-Framework",
+    liveUrl:
+      "https://steamcommunity.com/sharedfiles/filedetails/?id=3794717412",
     liveLabel: "View on Steam",
   },
 ];
