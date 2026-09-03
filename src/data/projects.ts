@@ -20,14 +20,6 @@ export const projects: Project[] = [
     liveLabel: "Try the console",
   },
   {
-    name: "Twitch Tarot Bot",
-    tagline: "Twitch Bot made in Go",
-    description:
-      "A Twitch bot made in Go. Features pulling single cards or a past-present-future spread. In the future, this will include a setup landing page for other Twitch streamers to use.",
-    tags: ["Go", "Twitch"],
-    repoUrl: "https://github.com/mariaalexissales/Twitch-Tarot-Bot",
-  },
-  {
     name: "Cooking Companion",
     tagline: "Local-first pantry tracker, installable as a PWA",
     description:
