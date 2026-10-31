@@ -54,6 +54,8 @@ export interface SocialLink {
 export interface Hero {
   name: string;
   role: string;
+  /** Current employer, shown next to the role. */
+  company?: string;
   location: string;
   summary: string;
   socials: SocialLink[];

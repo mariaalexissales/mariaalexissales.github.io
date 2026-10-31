@@ -2,10 +2,11 @@ import type { Hero } from "./types";
 
 export const hero: Hero = {
   name: "Maria Alexis Sales",
-  role: "Backend Software Engineer",
+  role: "Senior Software Engineer",
+  company: "Nara Benefits",
   location: "Chicago, IL",
   summary:
-    "Backend-focused software engineer with 4+ years across fintech, enterprise platforms and the games industry. I build event-driven services on Kafka and PostgreSQL, root-cause the REST APIs that misbehave, and ship them on Docker and Kubernetes across AWS and Azure. Currently learning Spring Boot and GCP",
+    "Backend-focused software engineer with 4+ years across fintech, enterprise platforms and the games industry. I build event-driven services on Kafka and PostgreSQL, root-cause the REST APIs that misbehave, and ship them on Docker and Kubernetes across AWS and Azure. Now a Senior Software Engineer at Nara Benefits, and learning Spring Boot and GCP.",
   socials: [
     {
       kind: "github",
