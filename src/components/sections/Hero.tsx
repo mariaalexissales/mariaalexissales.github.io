@@ -33,7 +33,27 @@ export default function Hero() {
                 sx={{ textAlign: { xs: "center", md: "left" } }}
               >
                 <Typography variant="overline" color="secondary">
-                  {hero.role} · {hero.location}
+                  {/* One line on desktop, one line per part on a phone. */}
+                  {[
+                    hero.company ? `${hero.role} at ${hero.company}` : hero.role,
+                    hero.location,
+                  ].map((part, i) => (
+                    <Box
+                      component="span"
+                      key={part}
+                      sx={{ display: { xs: "block", md: "inline" } }}
+                    >
+                      {i > 0 && (
+                        <Box
+                          component="span"
+                          sx={{ display: { xs: "none", md: "inline" } }}
+                        >
+                          {" · "}
+                        </Box>
+                      )}
+                      {part}
+                    </Box>
+                  ))}
                 </Typography>
                 <GradientText
                   variant="h1"

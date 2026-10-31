@@ -152,22 +152,24 @@ export default function ExperienceTimeline() {
                         </Typography>
                       </Stack>
 
-                      <Stack
-                        component="ul"
-                        spacing={0.75}
-                        sx={{ m: 0, pl: 2.5 }}
-                      >
-                        {entry.points.map((point) => (
-                          <Typography
-                            key={point}
-                            component="li"
-                            variant="body2"
-                            color="text.secondary"
-                          >
-                            {point}
-                          </Typography>
-                        ))}
-                      </Stack>
+                      {entry.points.length > 0 && (
+                        <Stack
+                          component="ul"
+                          spacing={0.75}
+                          sx={{ m: 0, pl: 2.5 }}
+                        >
+                          {entry.points.map((point) => (
+                            <Typography
+                              key={point}
+                              component="li"
+                              variant="body2"
+                              color="text.secondary"
+                            >
+                              {point}
+                            </Typography>
+                          ))}
+                        </Stack>
+                      )}
                     </Stack>
                   </CardContent>
                 </Card>

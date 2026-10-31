@@ -1,4 +1,5 @@
 import Box from "@mui/material/Box";
+import BackToTop from "./components/common/BackToTop";
 import SkipLink from "./components/common/SkipLink";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
@@ -21,6 +22,7 @@ export default function App() {
         <Certifications />
       </Box>
       <Footer />
+      <BackToTop />
     </Box>
   );
 }

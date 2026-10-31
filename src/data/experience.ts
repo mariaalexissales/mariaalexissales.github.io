@@ -3,6 +3,14 @@ import type { ExperienceEntry } from "./types";
 export const experience: ExperienceEntry[] = [
   {
     kind: "work",
+    role: "Senior Software Engineer",
+    organization: "Nara Benefits",
+    location: "Hybrid",
+    period: "Oct 2026 – Present",
+    points: [],
+  },
+  {
+    kind: "work",
     role: "Software Engineer",
     organization: "USG Corporation",
     location: "Hybrid",
