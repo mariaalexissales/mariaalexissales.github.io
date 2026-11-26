@@ -21,7 +21,8 @@ export const hero: Hero = {
     {
       kind: "email",
       label: "Email",
-      href: "mailto:mariaalexissales@gmail.com",
+      // The real mailto is built at interaction time in socialLinkProps.
+      href: "#contact",
     },
     {
       kind: "resume",
