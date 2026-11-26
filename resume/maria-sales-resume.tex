@@ -2,7 +2,7 @@
 % One file, no class: edit the text, not the layout.
 \documentclass[10pt,letterpaper]{article}
 
-\usepackage[margin=0.6in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage[margin=0.55in,top=0.45in,bottom=0.45in]{geometry}
 \usepackage{XCharter} % Tectonic runs XeTeX, so this loads the OpenType XCharter
 \usepackage{xcolor}
 \usepackage{enumitem}
@@ -21,7 +21,7 @@
 \setlength{\parskip}{0pt}
 
 \titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{1pt}\color{muted}\titlerule]
-\titlespacing*{\section}{0pt}{9pt}{5pt}
+\titlespacing*{\section}{0pt}{7pt}{4pt}
 
 \setlist[itemize]{leftmargin=1.1em, labelsep=0.4em, itemsep=1.5pt, parsep=0pt, topsep=2pt}
 
@@ -33,7 +33,7 @@
   \textbf{#1} \textcolor{muted}{\textperiodcentered\ #2}\hfill\textcolor{muted}{#3}\par}
 % \skills{Group}{List}
 \newcommand{\skills}[2]{\textbf{#1:} #2\par}
-\newcommand{\gap}{\vspace{5pt}}
+\newcommand{\gap}{\vspace{3pt}}
 
 \begin{document}
 
@@ -70,8 +70,8 @@ PostgreSQL and Kafka.
 \gap
 \role{Software Engineer}{USG Corporation}{Hybrid}{Sept 2025 -- April 2026}
 \begin{itemize}
-  \item Built and optimized the NestJS backend behind the redesigned USG website (launched Dec 2025) as
-        part of a migration to Next.js 15.
+  \item Built and optimized the NestJS backend for the redesigned USG website (launched Dec 2025) during
+        its Next.js 15 migration.
   \item Root-caused a REST bottleneck where Kafka messages hit the 2\,GB payload limit, traced it through
         structured logs to an upstream parser passing uncleaned fields, and fixed it with that team in
         about two hours.
@@ -82,27 +82,22 @@ PostgreSQL and Kafka.
 \gap
 \role{Software Engineer, AI Expert Contributor}{Snorkel AI}{Remote}{June 2024 -- Present}
 \begin{itemize}
-  \item Review AI-generated software engineering tasks drawn from real open-source pull requests,
-        checking problem statements, tests and solutions against the source.
-  \item Validate a coding-agent benchmark: Docker execution environments, test harnesses and verifier
-        reward logic, against difficulty and language targets.
+  \item Review AI-generated software engineering tasks built from real open-source pull requests.
+  \item Validate coding-agent benchmark tasks: Docker environments, test harnesses and verifier logic.
 \end{itemize}
 \gap
 \role{Software Developer I}{Pacific Life}{Newport Beach, CA}{Sept 2024 -- Nov 2024}
 \begin{itemize}
-  \item Designed a C\# event-ingestion API for policyholder notifications, publishing to Kafka for
-        asynchronous delivery in a regulated financial environment.
-  \item Migrated MuleSoft integrations to AWS Lambda and API Gateway across three US regions, with
-        S3-triggered load balancing for concurrent file processing.
+  \item Designed a C\# event-ingestion API publishing policyholder notifications to Kafka.
+  \item Migrated MuleSoft integrations to AWS Lambda and API Gateway across three US regions.
 \end{itemize}
 \gap
 \role{Associate Software Engineer}{Blizzard Entertainment}{Irvine, CA}{Oct 2022 -- Sept 2024}
 \begin{itemize}
   \item Maintained shared C\# LiveOps tooling for Diablo II: Resurrected, integrating Nintendo, Sony and
         Xbox SDKs to route per-platform crash reports into an internal dashboard.
-  \item Built a Python build step that hash-checked local binaries against the latest Artifactory build
-        and pulled the canonical ones on mismatch, ending environment-drift bugs; maintained Jenkins
-        pipelines for multi-branch development.
+  \item Built a Python build step that checked local binaries against Artifactory by hash and pulled
+        the canonical build on mismatch, ending environment-drift bugs.
 \end{itemize}
 
 \section{Projects}
