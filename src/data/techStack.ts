@@ -15,8 +15,9 @@ export const techStack: Record<TechCategory, TechItem[]> = {
     { name: "REST", detail: "OpenAPI, contract-first versioning" },
     { name: "NestJS" },
     { name: "Node.js" },
-    { name: "Springboot" },
+    { name: "Spring Boot" },
     { name: "Redis" },
+    { name: "Temporal", detail: "durable workflows and schedules" },
   ],
   "Cloud & Infrastructure": [
     { name: "AWS", detail: "Lambda, API Gateway, EC2, S3" },
@@ -29,6 +30,7 @@ export const techStack: Record<TechCategory, TechItem[]> = {
   ],
   "Tools & Frontend": [
     { name: "Datadog" },
+    { name: "Claude API" },
     { name: "Jenkins" },
     { name: "Git" },
     { name: "Perforce" },
