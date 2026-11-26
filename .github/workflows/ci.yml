@@ -29,5 +29,18 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - uses: wtfjoke/setup-tectonic@5e1ba6e10229bd876c6594189bdab1a62b9d0b1c # v4.0.6
+        with:
+          tectonic-version: 0.17.0
+
+      - name: Build resume
+        run: SOURCE_DATE_EPOCH=$(git log -1 --format=%ct) npm run resume
+
       - name: Type-check and build
         run: npm run build
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: resume
+          path: public/resume/maria-sales-resume.pdf
+          if-no-files-found: error

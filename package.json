@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "resume": "node -e \"require('fs').mkdirSync('public/resume',{recursive:true})\" && tectonic --outdir public/resume resume/maria-sales-resume.tex"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

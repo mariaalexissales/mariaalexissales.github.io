@@ -1,0 +1,133 @@
+% Resume for Maria Alexis Sales. Build: npm run resume (see README.md).
+% One file, no class: edit the text, not the layout.
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.6in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage{XCharter} % Tectonic runs XeTeX, so this loads the OpenType XCharter
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+
+\definecolor{ink}{HTML}{1F2328}
+\definecolor{muted}{HTML}{57606A}
+\color{ink}
+
+\hypersetup{pdftitle={Maria Alexis Sales - Resume}, pdfauthor={Maria Alexis Sales},
+  pdfcreator={}, pdfproducer={}, pdfsubject={}, pdfkeywords={}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{1pt}\color{muted}\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+\setlist[itemize]{leftmargin=1.1em, labelsep=0.4em, itemsep=1.5pt, parsep=0pt, topsep=2pt}
+
+% \role{Title}{Organization}{Location}{Dates}
+\newcommand{\role}[4]{%
+  \textbf{#1}, #2 \textcolor{muted}{\textperiodcentered\ #3}\hfill\textcolor{muted}{#4}\par}
+% \project{Name}{Context}{Dates}
+\newcommand{\project}[3]{%
+  \textbf{#1} \textcolor{muted}{\textperiodcentered\ #2}\hfill\textcolor{muted}{#3}\par}
+% \skills{Group}{List}
+\newcommand{\skills}[2]{\textbf{#1:} #2\par}
+\newcommand{\gap}{\vspace{5pt}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{22}{26}\selectfont Maria Alexis Sales}\par\vspace{4pt}
+  \textcolor{muted}{Chicago, IL}\enspace|\enspace
+  \href{mailto:mariaalexissales@gmail.com}{mariaalexissales@gmail.com}\enspace|\enspace
+  \href{https://www.linkedin.com/in/maria-alexis-sales/}{linkedin.com/in/maria-alexis-sales}\enspace|\enspace
+  \href{https://github.com/mariaalexissales}{github.com/mariaalexissales}
+\end{center}
+
+\section{Summary}
+Backend engineer who owns features end to end, from SFTP connectors and Terraform to the screen that uses
+them. Ships in small, reviewable pull requests behind launch flags, makes the safe path the default
+(redacted logs, least-privilege IAM, dependencies pinned by digest), and turns repeat mistakes into lint
+rules, hooks and test harnesses so they stay fixed. Works in Go, TypeScript, C\# and Java on AWS,
+PostgreSQL and Kafka.
+
+\section{Experience}
+\role{Senior Software Engineer}{Nara Benefits}{Hybrid}{Oct 2026 -- Present}
+\begin{itemize}
+  \item Led Spanish support across the member portal end to end: a translation-review workflow in the
+        internal CRM, each member's preferred language stored on the server, and that language carried
+        into emails, SMS, EOBs and the AI chat assistant, behind a flag until every string was reviewed.
+  \item Built vendor data intake for claims and payments on SFTP connectors, Temporal schedules and an
+        append-only ledger in PostgreSQL, with an alarm on each feed.
+  \item Hardened a HIPAA-regulated platform: took secrets and member contact details out of logs,
+        redacted query strings from WAF logs, sanitized CRM rendering against XSS, and pinned Node and CI
+        actions by digest and SHA.
+  \item Added guardrails to a pnpm monorepo: a pre-push hook for lint, format and typecheck, a Terraform
+        tag check, and a lint rule that fails on untranslated strings. Contributed to the team's AI
+        coding-agent tooling.
+\end{itemize}
+\gap
+\role{Software Engineer}{USG Corporation}{Hybrid}{Sept 2025 -- April 2026}
+\begin{itemize}
+  \item Built and optimized the NestJS backend behind the redesigned USG website (launched Dec 2025) as
+        part of a migration to Next.js 15.
+  \item Root-caused a REST bottleneck where Kafka messages hit the 2\,GB payload limit, traced it through
+        structured logs to an upstream parser passing uncleaned fields, and fixed it with that team in
+        about two hours.
+  \item Re-architected Kafka parsing around typed fields instead of a serialized string list, purged
+        stale Algolia records after TTL expiry, and added Datadog tracing across the
+        PostgreSQL $\rightarrow$ Kafka $\rightarrow$ Algolia pipeline.
+\end{itemize}
+\gap
+\role{Software Engineer, AI Expert Contributor}{Snorkel AI}{Remote}{June 2024 -- Present}
+\begin{itemize}
+  \item Review AI-generated software engineering tasks drawn from real open-source pull requests,
+        checking problem statements, tests and solutions against the source.
+  \item Validate a coding-agent benchmark: Docker execution environments, test harnesses and verifier
+        reward logic, against difficulty and language targets.
+\end{itemize}
+\gap
+\role{Software Developer I}{Pacific Life}{Newport Beach, CA}{Sept 2024 -- Nov 2024}
+\begin{itemize}
+  \item Designed a C\# event-ingestion API for policyholder notifications, publishing to Kafka for
+        asynchronous delivery in a regulated financial environment.
+  \item Migrated MuleSoft integrations to AWS Lambda and API Gateway across three US regions, with
+        S3-triggered load balancing for concurrent file processing.
+\end{itemize}
+\gap
+\role{Associate Software Engineer}{Blizzard Entertainment}{Irvine, CA}{Oct 2022 -- Sept 2024}
+\begin{itemize}
+  \item Maintained shared C\# LiveOps tooling for Diablo II: Resurrected, integrating Nintendo, Sony and
+        Xbox SDKs to route per-platform crash reports into an internal dashboard.
+  \item Built a Python build step that hash-checked local binaries against the latest Artifactory build
+        and pulled the canonical ones on mismatch, ending environment-drift bugs; maintained Jenkins
+        pipelines for multi-branch development.
+\end{itemize}
+
+\section{Projects}
+\project{Project Zomboid mods and server tooling}{Sunday Drivers, volunteer}{May 2025 -- Present}
+\begin{itemize}
+  \item Ship and maintain mods for community servers, including Bundle Up and Quest System Framework,
+        with GitHub Actions CI, a Lua test harness and a local test server for dedicated-server
+        behaviour.
+\end{itemize}
+\gap
+\project{Go Ledger}{personal}{2026}
+\begin{itemize}
+  \item Ledger app with a Go REST API and a React front end; CI actions pinned by SHA and Dependabot
+        updates on a cooldown.
+\end{itemize}
+
+\section{Skills}
+\skills{Languages}{Go, TypeScript, C\#, Java, Python, C/C++, Lua}
+\skills{Backend}{PostgreSQL, Kafka, Temporal, NestJS, Node.js, Spring Boot, REST, OpenAPI}
+\skills{Cloud and infrastructure}{AWS (Lambda, API Gateway, S3, Cognito, WAF), Azure, Terraform, Docker,
+  Kubernetes, GitHub Actions, Jenkins}
+\skills{Tools}{pnpm monorepos, Datadog, Git, Perforce, React, Next.js, Claude API}
+
+\section{Education}
+\role{B.A. Music Performance, Minor in Computer Science}{University of Illinois at Chicago}{Chicago, IL}{2021}
+\role{Machine Learning Specialization}{Stanford University and DeepLearning.AI}{Online}{2023}
+
+\end{document}
