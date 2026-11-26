@@ -12,6 +12,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import GlowButton from "../common/GlowButton";
 import Section from "../common/Section";
+import VisuallyHidden from "../common/VisuallyHidden";
 import { projects } from "../../data/projects";
 
 const CLAMP_LINES = 4;
@@ -83,7 +84,9 @@ export default function Projects() {
               <CardContent sx={{ flexGrow: 1 }}>
                 <Stack spacing={1.5}>
                   <Stack spacing={0.5}>
-                    <Typography variant="h6">{project.name}</Typography>
+                    <Typography variant="h6" component="h3">
+                      {project.name}
+                    </Typography>
                     <Typography variant="caption" color="secondary">
                       {project.tagline}
                     </Typography>
@@ -121,6 +124,9 @@ export default function Projects() {
                     startIcon={<GitHubIcon />}
                   >
                     Source
+                    <VisuallyHidden>
+                      {` for ${project.name} (opens in a new tab)`}
+                    </VisuallyHidden>
                   </Button>
                 )}
                 {project.liveUrl && (
@@ -133,6 +139,9 @@ export default function Projects() {
                     startIcon={<LaunchIcon />}
                   >
                     {project.liveLabel ?? "Live demo"}
+                    <VisuallyHidden>
+                      {` for ${project.name} (opens in a new tab)`}
+                    </VisuallyHidden>
                   </GlowButton>
                 )}
               </CardActions>

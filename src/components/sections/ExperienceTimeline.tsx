@@ -135,7 +135,7 @@ export default function ExperienceTimeline() {
                   <CardContent>
                     <Stack spacing={1}>
                       <Stack spacing={0.25}>
-                        <Typography variant="h6" sx={{ fontSize: "1.05rem" }}>
+                        <Typography variant="h6" component="h3" sx={{ fontSize: "1.05rem" }}>
                           {entry.kind === "education"
                             ? entry.credential
                             : entry.role}

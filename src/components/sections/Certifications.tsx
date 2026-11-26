@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Section from "../common/Section";
+import VisuallyHidden from "../common/VisuallyHidden";
 import { certifications } from "../../data/certifications";
 
 export default function Certifications() {
@@ -33,7 +34,7 @@ export default function Certifications() {
 
               <CardContent sx={{ flexGrow: 1 }}>
                 <Stack spacing={1}>
-                  <Typography variant="h6" sx={{ fontSize: "1.05rem" }}>
+                  <Typography variant="h6" component="h3" sx={{ fontSize: "1.05rem" }}>
                     {certification.name}
                   </Typography>
                   <Typography variant="caption" color="secondary">
@@ -54,6 +55,9 @@ export default function Certifications() {
                   startIcon={<LaunchIcon />}
                 >
                   View credential
+                  <VisuallyHidden>
+                    {` for ${certification.name} (opens in a new tab)`}
+                  </VisuallyHidden>
                 </Button>
               </CardActions>
             </Card>

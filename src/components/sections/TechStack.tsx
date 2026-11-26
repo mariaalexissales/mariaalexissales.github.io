@@ -17,7 +17,7 @@ export default function TechStack() {
           <Grid key={category} size={{ xs: 12, sm: 6 }}>
             <Card variant="outlined" sx={{ height: "100%" }}>
               <CardContent>
-                <Typography variant="h6" sx={{ mb: 2 }}>
+                <Typography variant="h6" component="h3" sx={{ mb: 2 }}>
                   {category}
                 </Typography>
                 <Stack spacing={1.25}>
