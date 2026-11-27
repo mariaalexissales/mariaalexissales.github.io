@@ -8,10 +8,11 @@ export default function VisuallyHidden({ children }: { children: ReactNode }) {
       component="span"
       sx={{
         position: "absolute",
-        width: 1,
-        height: 1,
+        // Strings on purpose: sx reads 1 as 100% and -1 as a spacing step.
+        width: "1px",
+        height: "1px",
         padding: 0,
-        margin: -1,
+        margin: "-1px",
         overflow: "hidden",
         clip: "rect(0 0 0 0)",
         whiteSpace: "nowrap",

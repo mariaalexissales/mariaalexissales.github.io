@@ -13,7 +13,10 @@ site safe (no employer-confidential detail, hardened, privacy-respecting) and ac
 ## Non-goals / anti-goals
 - No vendor names, internal system names, AWS account or role details, or pre-fix vulnerability detail.
   Naming any of these on a public page is a failure even if the page looks right.
-- Not a redesign. Not editing the resume PDF.
+- Not a redesign of the site.
+
+Added later in the same PR: the resume moved to a one-page LaTeX source (`resume/`) that CI builds with
+Tectonic. It adds Nara, ends USG in April 2026 and leaves the phone number off.
 
 ## Approaches considered
 - **Content detail level**: specific with names / public product names only / fully generic.

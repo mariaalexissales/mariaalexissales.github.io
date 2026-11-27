@@ -35,6 +35,9 @@
 \newcommand{\skills}[2]{\textbf{#1:} #2\par}
 \newcommand{\gap}{\vspace{3pt}}
 
+% Fail the build if the resume spills onto a second page.
+\AtEndDocument{\clearpage\ifnum\value{page}>2 \errmessage{The resume runs past one page}\fi}
+
 \begin{document}
 
 \begin{center}
