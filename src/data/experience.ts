@@ -10,7 +10,7 @@ export const experience: ExperienceEntry[] = [
     points: [
       "Led end-to-end Spanish support across the member portal: a translation-review workflow in the internal CRM, members' preferred language stored on the server, and that language carried into emails, SMS, EOBs and the AI chat assistant.",
       "Built vendor data intake for claims and payments on SFTP connectors, Temporal schedules and an append-only ledger in PostgreSQL, with an alarm on each feed.",
-      "Hardened a HIPAA-regulated platform: removed secrets and member contact details from logs, redacted query strings from WAF logs, and cleared dependency advisories across a monorepo.",
+      "Hardened a HIPAA-regulated platform: tightened log redaction and data handling, and cleared dependency advisories across a monorepo.",
     ],
   },
   {

@@ -62,9 +62,8 @@ rules, hooks and test harnesses so they stay fixed.
         into emails, SMS, EOBs and the AI chat assistant, behind a flag until every string was reviewed.
   \item Built vendor data intake for claims and payments on SFTP connectors, Temporal schedules and an
         append-only ledger in PostgreSQL, with an alarm on each feed.
-  \item Hardened a HIPAA-regulated platform: took secrets and member contact details out of logs,
-        redacted query strings from WAF logs, sanitized CRM rendering against XSS, and pinned Node and CI
-        actions by digest and SHA.
+  \item Hardened a HIPAA-regulated platform: tightened log redaction and data handling, and pinned Node
+        and CI actions by digest and SHA.
   \item Added guardrails to a pnpm monorepo: a pre-push hook for lint, format and typecheck, a Terraform
         tag check, and a lint rule that fails on untranslated strings. Contributed to the team's AI
         coding-agent tooling.
