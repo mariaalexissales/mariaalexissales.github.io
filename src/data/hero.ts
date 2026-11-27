@@ -6,7 +6,7 @@ export const hero: Hero = {
   company: "Nara Benefits",
   location: "Chicago, IL",
   summary:
-    "Backend-focused software engineer with 4+ years across fintech, enterprise platforms and the games industry. I build event-driven services on Kafka and PostgreSQL, root-cause the REST APIs that misbehave, and ship them on Docker and Kubernetes across AWS and Azure. Now a Senior Software Engineer at Nara Benefits, and learning Spring Boot and GCP.",
+    "Software engineer with 4+ years across fintech, enterprise platforms and the games industry. I build event-driven services on Kafka and PostgreSQL, root-cause the REST APIs that misbehave, and ship them on Docker and Kubernetes across AWS and Azure. Now a Senior Software Engineer at Nara Benefits, building a HIPAA-regulated health-benefits platform, and learning Spring Boot and GCP.",
   socials: [
     {
       kind: "github",
@@ -21,7 +21,8 @@ export const hero: Hero = {
     {
       kind: "email",
       label: "Email",
-      href: "mailto:mariaalexissales@gmail.com",
+      // The real mailto is built at interaction time in socialLinkProps.
+      href: "#contact",
     },
     {
       kind: "resume",

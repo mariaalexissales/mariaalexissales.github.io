@@ -6,3 +6,6 @@ dist
 .idea
 .vscode
 .DS_Store
+
+# Built from resume/ in CI
+public/resume/*.pdf

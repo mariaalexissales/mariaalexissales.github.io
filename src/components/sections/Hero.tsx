@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import GlowButton from "../common/GlowButton";
 import GradientText from "../common/GradientText";
 import SocialIcon from "../common/SocialIcon";
+import { socialLinkProps } from "../common/socialLinkProps";
 import { hero } from "../../data/hero";
 import me from "../../assets/me.jpg";
 
@@ -90,16 +91,10 @@ export default function Hero() {
                   return (
                     <ButtonComponent
                       key={social.kind}
-                      href={social.href}
+                      {...socialLinkProps(social)}
                       variant={isResume ? "contained" : "outlined"}
                       color={isResume ? "primary" : "inherit"}
                       startIcon={<SocialIcon kind={social.kind} />}
-                      target={social.kind === "email" ? undefined : "_blank"}
-                      rel={
-                        social.kind === "email"
-                          ? undefined
-                          : "noopener noreferrer"
-                      }
                     >
                       {social.label}
                     </ButtonComponent>

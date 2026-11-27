@@ -28,6 +28,19 @@ jobs:
 
       - run: npm ci
 
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-0.17.0-${{ hashFiles('resume/*.tex') }}
+          restore-keys: tectonic-0.17.0-
+
+      - uses: wtfjoke/setup-tectonic@5e1ba6e10229bd876c6594189bdab1a62b9d0b1c # v4.0.6
+        with:
+          tectonic-version: 0.17.0
+
+      - name: Build resume
+        run: SOURCE_DATE_EPOCH=$(git log -1 --format=%ct) npm run resume
+
       - run: npm run build
 
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0

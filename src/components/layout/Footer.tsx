@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import SocialIcon from "../common/SocialIcon";
+import { socialLinkProps } from "../common/socialLinkProps";
 import { hero } from "../../data/hero";
 
 export default function Footer() {
@@ -29,12 +30,8 @@ export default function Footer() {
             {hero.socials.map((social) => (
               <IconButton
                 key={social.kind}
-                href={social.href}
+                {...socialLinkProps(social)}
                 aria-label={social.label}
-                target={social.kind === "email" ? undefined : "_blank"}
-                rel={
-                  social.kind === "email" ? undefined : "noopener noreferrer"
-                }
                 size="small"
               >
                 <SocialIcon kind={social.kind} />

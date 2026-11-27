@@ -6,6 +6,12 @@ html {
   scroll-margin-top: 88px;
 }
 
+/* Keep a tabbed-to control clear of the sticky navbar (WCAG 2.4.11). */
+:where(a, button, [tabindex]) {
+  scroll-margin-top: 88px;
+  scroll-margin-bottom: 24px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
